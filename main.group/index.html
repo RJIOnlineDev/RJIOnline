@@ -45,7 +45,7 @@
 	]
 	</script>
 {html_head_end}
-<body> 
+<body>
 {embed="main/_navbar"}
 
 		  {!-- Carousel Bootstrap JS works with classes as outlined below:
@@ -63,7 +63,6 @@
 		  <div id="carousel" class="carousel slide hidden-xs" data-ride="carousel">
 
 		  {exp:channel:entries channel="slider_images" limit="4" category="70" disable="categories|member_data|category_fields|pagination" cache="yes" refresh="500"}
-
 		  		{if count == 1 AND total_results > 1}
 		  		<ol class="carousel-indicators">
 					{exp:for_loop start="1" end="{total_results}" increment="1"}
