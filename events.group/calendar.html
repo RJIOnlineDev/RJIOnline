@@ -89,7 +89,7 @@
 									{events}
 										<li style="border-top: 1px solid  #ffffff;"><a href='{site_url}events/{event_url_title}' class="hidden-xs">{event_title}<br>
 										{if (logged_in_group_id == "1" || logged_in_group_id == "7")}
-											{event_start_date format="%g:%i"}-{event_end_date format="%g:%i"} in
+											{event_start_date format="%g:%i %A"}-{event_end_date format="%g:%i %A"} in
 											<b>
 											{if room_requested}
 												{room_requested}
