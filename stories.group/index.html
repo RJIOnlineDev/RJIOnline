@@ -466,7 +466,6 @@
 
 		</div> {!-- ends #news-listing --}
 
-		{!--embed="stories/_get_related_stories" entry_id="{entry_id}" series="{post_series}"--}
 {!-- EVERYTHING BETWEEN THIS AND THE NEXT COMMENT TAG IS YOUNEEQ --}
 <div class="page-header story-list-header">
     <p class="story-list-heading">
@@ -479,6 +478,8 @@
     <div class="row"></div>
 </div>
 {!-- THIS ENDS THE YOUNEEQ TAG--}
+
+{embed="stories/_get_related_stories" entry_id="{entry_id}" series="{post_series}"}
 
 		{if !is_bwf_preview}
 		{disqus_comments} {!-- Snippet that calls all comments for this post and has comment form --}
