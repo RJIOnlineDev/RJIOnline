@@ -4,7 +4,7 @@
 
 {html_head}
 	<title>
-	RJI Live Stream
+	RJI Live Stream 3
 	</title>
 	{head_content}
 
@@ -29,6 +29,15 @@
 		  }]
 	}
 	</script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $("#rosterModal").modal('show');
+    });
+	 </script>
+
 {html_head_end}
 <body>
 {embed="main/_navbar"}
@@ -44,9 +53,6 @@
 	<div class="col-md-8 col-sm-12">
 
 	<h1>RJI live</h1>
-
-
-		{if logged_in}
 
 			{!--
 				Custome RJI module that tracks people who specifically are viewing the live stream.
@@ -116,62 +122,18 @@
 				</object>
 			</noscript>
 
-			{!--<a href="http://128.206.14.199/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8" class="btn btn-default btn-lg">Tap here to view live video on your Apple iOS or Android OS mobile device</a>--}
-
-         {!--<h3>2016 RJI Tech Showcase</h3>
-
-         <p>Join the conversation using #rjitech on Twitter or the chatbox on this page.</p>
-
-         <h4>Schedule</h4>
-
-         <p>The event is 9 a.m. to 4:30 p.m. CDT on Tuesday, May 3. <a href="/events/rjitech16#schedule">See the full schedule here.</a></p>--}
-
-         <!--
-         <p>Join the conversation using <a href="https://twitter.com/hashtag/RJIcollab">#RJICollab</a> on Twitter or post in the chat box to the right of the livestream window.</p>
-
-         <h4><span style="width: 6em; display: inline-block; float: left; margin-bottom: 0.5em;">8:00 a.m.</span><span>Immersive Storytelling</span></h4>
-
-         <p style="clear: left; padding-left: 7.25em;">Nicholas Whitaker, media outreach manager, The News Lab at Google</p>
-
--->
-        {if:else}
-
-			<div class="alert alert-danger">
-				<h4 class="panel-title">Login Required</h4>
-				<p>Viewing the live stream now requires you to have an activated account on RJI Online.</p>
-
-				<script>
-					// Opens the member modal and shows the login form
-					function open_sign_in(){
-						$('#loginModal').modal('show');
-						$('a[href=#login]').tab('show');
-					}
-
-					// Opens the member modal and shows the register form
-					function open_register(){
-						$('#loginModal').modal('show');
-						$('a[href=#register]').tab('show');
-					}
-				</script>
-
-				{!-- Will either open the member modal as described in the scripts above, or will go to the login/register account temeplates --}
-				<p>Need to create an account? <a href="{path='account/register'}" onClick="open_register();return false;" class="alert-link" title="Register">Register</a>.</p>
-				<p>Already have an account? <a href="{path='account/login'}" onClick="open_sign_in();return false;" class="alert-link" title="Login">Login</a>.</p>
-				<p>Having problems logging in or registering an account? Contact the <a href="mailto:hendersonl@rjionline.org" class="alert-link">website administrator</a>.</p>
-			</div>
-
-    	{/if}
-
     </div>
 
     <div id="sidebar" class="col-md-4 hidden-sm hidden-xs">
     <!-- Insert Scribblelive code here -->
+	 <iframe src="//embed.scribblelive.com/Embed/v5.aspx?Id=2480218&ThemeId=19899" width="550" height="600" frameborder="0"></iframe>
+
     {!--<div class="scrbbl-embed" data-src="/event/2046731"></div>
 <script>(function(d, s, id) {var js,ijs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//embed.scribblelive.com/widgets/embed.js";ijs.parentNode.insertBefore(js, ijs);}(document, 'script', 'scrbbl-js'));</script>
     <p>Click the word balloon icon above to comment directly in the comment box, or use the Twitter hashtag below.</p>
     <h2><a href="https://twitter.com/hashtag/rjitech" target="_blank">#rjitech</a></h2>--}
 
-{embed="main/_sidebar" recent="YES" events="YES" related="NO" categories="YES" tags="YES" section="stories"}
+{!--{embed="main/_sidebar" recent="YES" events="YES" related="NO" categories="YES" tags="YES" section="stories"}--}
 
     </div>
 
