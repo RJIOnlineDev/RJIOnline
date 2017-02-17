@@ -101,7 +101,7 @@
 		"description": "{teaser}"
 	}
 	</script>
-	{!--<script src="{path='global_embeds/youneeq'}" type="text/javascript" async></script>
+	<script src="{path='global_embeds/youneeq'}" type="text/javascript" async></script>
 	<script type="text/javascript" defer>
 		function youneeq_observe() {
 			var story_obj = JSON.parse($('script[type="application/ld+json"]').text());
@@ -155,7 +155,7 @@
 
 			return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 		}
-	</script>--}
+	</script>
 	{!--<link rel="amphtml" href="{url_title_path='stories/amp'}">  AMP page link --}
 	<meta name="description" content="{teaser}" /> {!-- Used when displaying text about this link --}
 	<link rel="publisher" href="https://plus.google.com/111709737662107424167" /> {!-- No surprise Google uses its own social network to identify publishers --}
@@ -467,16 +467,16 @@
 		</div> {!-- ends #news-listing --}
 
 {!-- EVERYTHING BETWEEN THIS AND THE NEXT COMMENT TAG IS YOUNEEQ --}
-{!--<div class="page-header story-list-header">
+<div class="page-header story-list-header">
     <p class="story-list-heading">
         <span class="focus">Recommended</span> for You
     </p>
 </div>
 <div id="youneeq" class="card-bg container-fluid" data-yq-suggest-count="3" data-yq-observe-function="youneeq_observe"
-    data-yq-display-function="youneeq_display" data-yq-features="google-analytics" data-yq-suggest-date-start="2011-01-01T00:00:00.000Z" data-yq-suggest-panel-custom="id|title|url|image|categories|date">
+    data-yq-display-function="youneeq_display" data-yq-features="no-google-analytics" data-yq-suggest-date-start="2011-01-01T00:00:00.000Z" data-yq-suggest-panel-custom="id|title|url|image|categories|date">
     <a href="#" class="recommended-modal"><img src="https://api.youneeq.ca/Content/images/powered-by-y.gif" /></a>
     <div class="row"></div>
-</div>--}
+</div>
 {!-- THIS ENDS THE YOUNEEQ TAG--}
 
 {embed="stories/_get_related_stories" entry_id="{entry_id}" series="{post_series}"}
