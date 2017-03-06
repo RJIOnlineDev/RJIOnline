@@ -240,11 +240,12 @@
 						limit="10"
 						disable="categories|member_data|category_fields"
 						cache="yes"
-						refresh="700"}
+						refresh="700"
+						search:hidden="not Yes"}
 
 					{if no_results}<p>No Results</p>{/if}
 
-					{if hidden != "Yes"}{rji_media_list}{/if}
+					{!--{if hidden != "Yes"}--}{rji_media_list}{!--{/if}--}
 
 					{pagination_snippet}
 
