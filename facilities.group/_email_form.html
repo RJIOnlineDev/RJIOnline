@@ -18,6 +18,16 @@
 	<input type="email" id="from" name="contact_email" class="form-control" value="" required/>
   </div>
 
+  <div class="form-group">
+	<label for="mocode"><em class="required">&ast;</em>MoCode in case of damages:</label>
+	<input type="text" id="mocode" name="mocode" class="form-control" value="" required/>
+  </div>
+
+  <div class="form-group">
+	<label for="signer"><em class="required">&ast;</em>Authorized signer:</label>
+	<input type="text" id="signer" name="signer" class="form-control" value="" required/>
+  </div>
+
   {!--<div class="form-group">
 	<label for="from">Other rooms needed: {title}</label>
     {exp:channel:entries channel="rooms" dynamic="no" disable="categories|category_fields|member_data|pagination" entry_id="not {segment_3}"}
