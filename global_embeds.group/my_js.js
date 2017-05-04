@@ -1,9 +1,9 @@
 /*
  * My JS
- * Nicholas Cappo / Kean Mattingly
- * Last updated: 160825
+ * Nicholas Cappo / Kean Mattingly / Lamar Henderson
+ * Last updated: 170504
  */
- 
+
  /* Gallery fetch ajax */
 $('.btn-gallery').click(function(event) {
 	var df = String($(this).attr("data-fetch"));
@@ -54,8 +54,8 @@ function goToTab() {
   var prefix = "tab_";
   if (hash) {
       $('.nav-tabs a[href='+hash.replace(prefix,"")+']').tab('show');
-  } 
-  
+  }
+
   // Change hash for page-reload
   //$('.nav-tabs a').on('shown.bs.tab', function (e) {
   //    window.location.hash = e.target.hash.replace("#", "#" + prefix);
@@ -122,7 +122,7 @@ function go(){ // grabs variables from the reserve form and shoots the user to t
 		+ $("#year option:selected").val() + "/"
 		+ $("#month option:selected").val() + "/";
        // + $("#day option:selected").val();
-		
+
     window.location = url;
     return false;
 }
@@ -138,14 +138,14 @@ $(window).resize(checkWidth);
 
 //$("[data-toggle=popover]").popover().click(function(e) {e.preventDefault();});
 $("#login-link").removeAttr('href');
-  
+
 $(window).on("hashchange", function () {
 	window.scrollTo(window.scrollX, window.scrollY - 100);
 });
 
 /* Uses JQuery plugin .hoverIntent so that the carousel doesn't switch on a simple mouse enter event making it look more stable
-$('.carousel-indicators-2 > div').hoverIntent(function(){  
-    $(this).trigger('click');  
+$('.carousel-indicators-2 > div').hoverIntent(function(){
+    $(this).trigger('click');
 });
 */
 $('.nav > .dropdown > .dropdown-toggle').hoverIntent(function(){
@@ -232,7 +232,7 @@ function check_event_date() {
 	var date = new Date(), currentMonth = date.getMonth(), currentYear = date.getFullYear();//+1 because it starts at index 0
     var selectedMonth = parseInt(document.getElementById("month").value, 10);
     var selectedYear = parseInt(document.getElementById("year").value, 10);
-    
+
     if (currentYear == selectedYear && currentMonth >= selectedMonth) {
 		if (!checked) {
 			$("<br><p>That date has already passed!</p>").appendTo(document.getElementById("selectForm"));
@@ -254,31 +254,33 @@ $(function() {
 	    	e.preventDefault();//Stop the default action (submitting the form) from occurring
             clicked = 1;//Lets the function know to run go() the next time it is run
             e.returnValue = false;//don't submit the form
-            
+
             //BEGIN VARIABLE COLLECTION PROCESS
 			var name = $("#name").val();
             var email = $("#from").val();
-            
+
             var room211 = "";
             if ($("#rooms0").is(':checked'))
             	room211 = "Room 211\n";
-            
+
             var room200B = "";
             if ($("#rooms1").is(':checked'))
             	room200B = "Spencer Room 200B\n";
-            
+
             var room200A = "";
             if ($("#rooms2").is(':checked'))
             	room200A = "Lambert Room 200A\n";
-                
+
             var room100A = "";
             if ($("#rooms3").is(':checked'))
             	room100A = "Palmer Room 100A\n";
-                
+
             var room200 = "";
             if ($("#rooms4").is(':checked'))
             	room200 = "Smith Forum 200\n";
-            
+
+            var mocode = $("#mocode").val();
+            var signer = $("#signer").val();
             var meetingStart = $("#startTime").val();
             var meetingEnd = $("#endTime").val();
             var setupTime = $("#setupTime").val();
@@ -295,11 +297,11 @@ $(function() {
             if ($("#alcYes").is(':checked'))
             	alcohol = "I will be serving alcohol at this event and will obtain a temporary use of alcoholic beverages permit.\n";
             //END VARIABLE COLLECTION PROCESS
-            
+
             //package up some json for the AJAX call
             var data = {
             	subject: $("#subject").val(),
-                message: "Thank you for submitting an RJI room reservation request. We will be in contact with you within three business days to confirm. \n\n\nName:\n" + name + "\n\nEmail:\n" + email + "\n\nOther Rooms Needed:\n" + room211 + room200B + room200A + room100A + room200 + "\nMeeting Start Time:\n" + meetingStart + "\n\nMeeting End Time:\n" + meetingEnd + "\n\nSetup Time:\n" + setupTime + "\n\nCleanup Time:\n" + cleanupTime + "\n\nPhone Number:\n" + phoneNumber + "\n\nOrganization:\n" + organization + "\n\nEvent Name:\n" + eventName + "\n\nPeople:\n" + people + "\n\nDescription:\n" + description + "\n\n\nNote:\n" + food + alcohol + "I have read and understand the RJI Room Reservation Policies.",
+                message: "Thank you for submitting an RJI room reservation request. We will be in contact with you within three business days to confirm. \n\n\nName:\n" + name + "\n\nEmail:\n" + email + "\n\nMoCode in case of damages:\n" + mocode + "\n\nAuthorized signer:\n" + signer + "\nMeeting Start Time:\n" + meetingStart + "\n\nMeeting End Time:\n" + meetingEnd + "\n\nSetup Time:\n" + setupTime + "\n\nCleanup Time:\n" + cleanupTime + "\n\nPhone Number:\n" + phoneNumber + "\n\nOrganization:\n" + organization + "\n\nEvent Name:\n" + eventName + "\n\nPeople:\n" + people + "\n\nDescription:\n" + description + "\n\n\nNote:\n" + food + alcohol + "I have read and understand the RJI Room Reservation Policies.",
             	email: $("#from").val()
             };
 
