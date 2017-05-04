@@ -1,7 +1,7 @@
 /*
  * My JS
- * Nicholas Cappo / Kean Mattingly
- * Last updated: 160825
+ * Nicholas Cappo / Kean Mattingly / Lamar Henderson
+ * Last updated: 170504
  */
 
  /* Gallery fetch ajax */
@@ -279,6 +279,8 @@ $(function() {
             if ($("#rooms4").is(':checked'))
             	room200 = "Smith Forum 200\n";
 
+            var mocode = $("#mocode").val();
+            var signer = $("#signer").val();
             var meetingStart = $("#startTime").val();
             var meetingEnd = $("#endTime").val();
             var setupTime = $("#setupTime").val();
@@ -299,7 +301,7 @@ $(function() {
             //package up some json for the AJAX call
             var data = {
             	subject: $("#subject").val(),
-                message: "Thank you for submitting an RJI room reservation request. We will be in contact with you within three business days to confirm. \n\n\nName:\n" + name + "\n\nEmail:\n" + email + "\n\nOther Rooms Needed:\n" + room211 + room200B + room200A + room100A + room200 + "\nMeeting Start Time:\n" + meetingStart + "\n\nMeeting End Time:\n" + meetingEnd + "\n\nSetup Time:\n" + setupTime + "\n\nCleanup Time:\n" + cleanupTime + "\n\nPhone Number:\n" + phoneNumber + "\n\nOrganization:\n" + organization + "\n\nEvent Name:\n" + eventName + "\n\nPeople:\n" + people + "\n\nDescription:\n" + description + "\n\n\nNote:\n" + food + alcohol + "I have read and understand the RJI Room Reservation Policies.",
+                message: "Thank you for submitting an RJI room reservation request. We will be in contact with you within three (3) business days to confirm. \n\n\nName:\n" + name + "\n\nEmail:\n" + email + "\n\nMoCode in case of damages:\n" + mocode + "\n\nAuthorized signer:\n" + signer + "\n\nMeeting Start Time:\n" + meetingStart + "\n\nMeeting End Time:\n" + meetingEnd + "\n\nSetup Time:\n" + setupTime + "\n\nCleanup Time:\n" + cleanupTime + "\n\nPhone Number:\n" + phoneNumber + "\n\nOrganization:\n" + organization + "\n\nEvent Name:\n" + eventName + "\n\nPeople:\n" + people + "\n\nDescription:\n" + description + "\n\n\nNote:\n" + food + alcohol + "I have read and understand the RJI Room Reservation Policies.",
             	email: $("#from").val()
             };
 
