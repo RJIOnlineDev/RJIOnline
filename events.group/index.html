@@ -364,11 +364,20 @@
 						  <p class="help-block">First and last name.</p>
 						  <input type="text" class="form-control" value="{contact_name}"/>
 						</div>
-
 						<div class="form-group">
 						  <label for="from"><em class="required">&ast;</em>Contact email:</label>
 						  <input type="text" class="form-control" value="{contact_email}"/>
 						</div>
+						{if member_group == '1' OR member_group == '6' OR member_group == '7'}
+						<div class="form-group">
+							<label for="mocode"><em class="required">&ast;</em>MoCode in case of damages:</label>
+							<input type="text" class="form-control" value="{mocode}" required/>
+						</div>
+						<div class="form-group">
+							<label for="signer"><em class="required">&ast;</em>Authorized signer:</label>
+							<input type="text" class="form-control" value="{signer}" required/>
+						</div>
+						{/if}
 
 						<div class="form-group">
 						  <label for="from">Other rooms needed:</label>
