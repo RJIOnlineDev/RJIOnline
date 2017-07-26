@@ -47,6 +47,43 @@
 			<h2>RJI Fellowships: Our fellows</h2>
 		</div>
 
+		{!-- 2017–2017 -----------------------------------}
+
+			<div class="profile-list">
+				<h3 class="secondary" id="2017">2017–2018 class</h3>
+
+					<div class="">
+
+					{exp:user:users orderby="sort_order" sort="asc" group_id="1|6|7|8" search:fellows_class="2017-2018"}
+
+						{if (count % 2) == 1}
+							{if count != 1}
+							</div> {!-- Close the previous row, but there ins't one on the first pass... --}
+							{/if}
+							<div class="row"> {!-- Start the next row --}
+						{/if}
+
+						<div class="col-sm-6 profile-height">
+								<div class="media staff card">
+									<a class="pull-left" href="{path=account/profile}/{member_id}"><img class="media-object" src="{if avatar_filename}{avatar_url}{avatar_filename}{if:else}/images/avatars/uploads/avatar_1.png{/if}" title="{screen_name}" alt="{screen_name}" class="profile-avatar"></a>
+									<div class="media-body">
+										<h4 class="media-heading"><a href="{path=account/profile}/{member_id}">{screen_name}</a></h4>
+										<p class="user-info">
+											{position_1}<br>
+											{if phone}<a href="tel:{phone}">{phone}</a><br>{/if}
+											<a href="mailto:{email}" target="_blank">{email}</a>
+										</p>
+									</div>
+								</div>
+							</div>
+
+					{/exp:user:users}
+
+						</div> {!-- Leave this to close the last row --}
+					</div>
+
+			</div>
+
 		{!-- 2016-2017 -----------------------------------}
 
 			<div class="profile-list">
