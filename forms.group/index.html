@@ -75,6 +75,35 @@
 
          {/if}
 
+			{if:elseif segment_1 == "forms" && segment_2 == "contact_us_about_using_bots_for_engagement"}
+
+            <h2>Contact us about using bots for engagement</h2>
+
+            <p><a href="/account/profile/1431">Andrew Haeg</a>, founder of GroundSource and 2016–2017 RJI Fellow, is creating an in-depth report from a workshop held in August 2017 on using bots for engagement.</p>
+
+				<p>If you'd like to receive a copy of this report, please fill out this form.</p>
+
+            <p><strong>(All fields required.)</strong></p>
+
+            <div class="form-group">
+
+              {exp:freeform:form form_name="contact_us_about_using_bots_for_engagement"}
+
+               <dl>
+                  {freeform:all_form_fields}
+                     <dt><label>{freeform:field_label}</label></dt>
+                     <dd>{freeform:field_output}</dd>
+                  {/freeform:all_form_fields}
+               </dl>
+
+               <p>{freeform:submit}</p>
+
+               {/exp:freeform:form}
+
+            </div>
+
+         {/if}
+
 		</div>
 		</div>
 
