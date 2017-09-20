@@ -26,7 +26,7 @@
       <title>Donald W. Reynolds Journalism Institute</title>
    	</image>
 
-{exp:channel:entries channel="stories" limit="999" disable="member_data|pagination"}
+{exp:channel:entries channel="stories" limit="100" disable="member_data|pagination"}
     <item>
       <title><![CDATA[{title}]]></title>
       <link>{title_permalink='stories/index'}</link>
