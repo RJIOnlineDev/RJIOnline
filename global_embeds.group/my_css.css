@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document ==================================================
 	RJI Online - Styling - Nick Cappo / Lamar Henderson / Kean Mattingly
-	Update: 170719 lah
+	Update: 171017 lah
 
 	Sections:
 	0. General
@@ -349,6 +349,7 @@ li.yamm-fw.open > a.dropdown-toggle {
 .yamm-content > .row-fluid > .col-sm-2 > ul > li > a:hover,
 .yamm-content > .row-fluid > .col-sm-2 > ul > li > a:focus { text-decoration: none; }
 .yamm-content > .row-fluid > .col-sm-2 > ul > li > a > h4 { padding: 10px 15px 10px 0; margin: 0;}
+.yamm-content > .row-fluid > .col-sm-2 > ul > li > a > h5 { padding: 6px 15px 6px 0; margin: 0;}
 .yamm-content > .row-fluid > .col-sm-10 { background-color: #fff; padding-top: 10px; padding-bottom: 1em; }
 .yamm-fw > .dropdown-menu { background-color: /*#CCE1E6*/#E0EDF0; }
 
