@@ -104,6 +104,33 @@
 
          {/if}
 
+			{if:elseif segment_1 == "forms" && segment_2 == "video_request"}
+
+            <h2>Video request</h2>
+
+            <p>Would you like to livestream an event, create a video for an event or story? Fill out this form and we'll get back to you as soon as possible.</p>
+
+            <p><strong>(All fields required.)</strong></p>
+
+            <div class="form-group">
+
+              {exp:freeform:form form_name="video_request"}
+
+               <dl>
+                  {freeform:all_form_fields}
+                     <dt><label>{freeform:field_label}</label></dt>
+                     <dd>{freeform:field_output}</dd>
+                  {/freeform:all_form_fields}
+               </dl>
+
+               <p>{freeform:submit}</p>
+
+               {/exp:freeform:form}
+
+            </div>
+
+         {/if}
+
 		</div>
 		</div>
 
