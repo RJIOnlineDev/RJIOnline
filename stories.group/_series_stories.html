@@ -3,7 +3,7 @@
 			<h3>Most recent story</h3>
 				  <div class="media">
 				  	  <a href="{if page_url != ''}{page_url}{if:else}{comment_url_title_auto_path}{/if}" class="pull-left" style="width: 15%;">
-	
+
 					  {!-- If there is a news image, use that, else maybe it's an event so if there is an event image use that, else there is no given image, use default image --}
 					  {if news_image}
 						  {news_image}
@@ -23,23 +23,23 @@
 				<br>
 					{if lede}<div class="well">{/if}
 						{lede}
-					
+
 					  <a href="{comment_url_title_auto_path}"><p class="lead">Read more...</p></a>
 					{if lede}</div>{/if}
-				
-				
+
+
 	{/exp:channel:entries}
 				<div class="page-header"><h3>More stories</h3></div>
-				  
+
 				<div class="card-bg">
-			
+
 				<ul id="recent-posts" class="media-list">
-				
+
 	{exp:channel:entries sticky="no" channel="stories" dynamic="no" search:post_series="{embed:series}" limit="5" offset="1" disable="categories|member_data" paginate="bottom"}
 
 
 					{rji_media_list}
-					
+
 					{if current_url == embed:page_url}
 						{paginate}
 							<ul class="pager">
@@ -50,8 +50,27 @@
 						{pagination_snippet}
 					{/if}
 	{/exp:channel:entries}
+
+	<div class="page-header"><h3>Related stories</h3></div>
+
+	<div class="card-bg">
+
+	<ul id="recent-posts" class="media-list">
+
+	{exp:channel:entries sticky="no" channel="stories" dynamic="no" search:secondary_series="{embed:series}" limit="5" offset="1" disable="categories|member_data" paginate="bottom"}
+
+
+			{rji_media_list}
+
+			{if current_url == embed:page_url}
+				{paginate}
+					<ul class="pager">
+						<li class="next"><a href="{embed:comment_path}/P5#recent-posts">Older &rarr;</a></li>
+					</ul>
+				{/paginate}
+			{if:else}
+				{pagination_snippet}
+			{/if}
+	{/exp:channel:entries}
 			</ul>
 			</div>
-
-				
-  		
