@@ -73,6 +73,10 @@
 			{if:else}
 				{pagination_snippet}
 			{/if}
+
+			{if search:secondary_series=0}
+			<p>No related stories found.</p>
+			{/if}
 	{/exp:channel:entries}
 			</ul>
 			</div>
