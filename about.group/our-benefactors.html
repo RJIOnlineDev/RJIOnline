@@ -45,7 +45,36 @@
 
 				<ul id="recent-posts" class="media-list">
 
-					{exp:channel:entries channel="benefactors" sticky="no" status="open" limit="10" disable="categories|member_data|category_fields" cache="yes" refresh="100"}
+					<li class="media card">
+
+						<iframe width="560" style="width: 100%;" src="https://www.youtube.com/embed/1X43CmD7IKo" frameborder="0" allowfullscreen></iframe>
+
+					</li>
+
+				</ul>
+
+				<ul id="recent-posts" class="media-list" style="padding: 2em 0;">
+					<li class="media card">
+						<div style="background: #cccccc; min-height: 388px; padding: 1.5em; width: 100%;">
+							<div style="float: left; clear: none;">
+								<img src="/images/posts/images_reynolds-portrait.jpg" class="img-float-left;" style="float: left; max-width: 301px; margin-right: 1.5em; min-height: 388px;">
+								<h3 style="margin-top: 0px;">Donald W. Reynolds</h3>
+								<h4 class="media-heading">Founder, Donald W. Reynolds Foundation</h4>
+								<h4 class="media-heading"><a href="/about/our-benefactors/donald-w-reynolds">Part 1</a></h4>
+								<p>Donald W. Reynolds founded the foundation that contributed the creation of the Donald W. Reynolds Journalism Institute.</p>
+								<h4 class="media-heading"><a href="/about/our-benefactors/donald-w-reynolds-part-2">Part 2</a></h4>
+								<p>The Donrey Media Group eventually included some 100 enterprises. It began with two purchases in 1940.</p>
+								<h4 class="media-heading"><a href="/about/our-benefactors/donald-w-reynolds-part-3">Part 3</a></h4>
+								<p>“Work is the most interesting thing I do,” Donald W. Reynolds told his biographer. A major part of that work for decades was travel.</p>
+							</div>
+								<p style="clear: both; height: 0px;">&nbsp;</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul id="recent-posts" class="media-list" style="clear: both;">
+
+					{exp:channel:entries channel="benefactors" offset="4" sticky="no" status="open" limit="10" disable="categories|member_data|category_fields" cache="yes" refresh="100"}
 
 						{if no_results}<p>No Results</p>{/if}
 
