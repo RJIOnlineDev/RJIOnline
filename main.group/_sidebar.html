@@ -26,8 +26,8 @@
 
 {/exp:calendar:events}
 
-{!-- Innovation in Focus button --}
-{exp:channel:entries channel="blocks" entry_id="9859" search:visibility_segment_1="=/{segment_1}" disable="categories|member_data|category_fields|pagination" dynamic="no" limit="1" status="open"}
+{!-- Top buttons --}
+{exp:channel:entries channel="blocks" entry_id="9859|9903" search:visibility_segment_1="=/{segment_1}" disable="categories|member_data|category_fields|pagination" dynamic="no" limit="2" status="open"}
 
 	{if "{visibility_segment_2}" == "" OR "{visibility_segment_2}" == "/{segment_2}"}
 		{if "{visibility_segment_3}" == "" OR "{visibility_segment_3}" == "/{segment_3}"}
@@ -75,7 +75,7 @@ refresh="1500"
 
 
 {!-- BLOCKS --}
-{exp:channel:entries channel="blocks" entry_id="not 9859" search:visibility_segment_1="=/{segment_1}" disable="categories|member_data|category_fields|pagination" dynamic="no" limit="10" status="open"}
+{exp:channel:entries channel="blocks" entry_id="not 9859|9903" search:visibility_segment_1="=/{segment_1}" disable="categories|member_data|category_fields|pagination" dynamic="no" limit="10" status="open"}
 
 	{if "{visibility_segment_2}" == "" OR "{visibility_segment_2}" == "/{segment_2}"}
 		{if "{visibility_segment_3}" == "" OR "{visibility_segment_3}" == "/{segment_3}"}
