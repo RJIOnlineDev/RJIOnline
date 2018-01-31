@@ -1,5 +1,5 @@
 {!-- Want to use exp:channel:entries and use search:series="{title}" but we will have to use exp:stash for that --}
-			{exp:channel:entries channel="stories" sticky="no" dynamic="no" search:post_series="{embed:series}" limit="1" disable="categories|member_data|pagination" }
+			{exp:channel:entries channel="stories" sticky="no" dynamic="no" search:post_series="{embed:series}" search:secondary_series="not {embed:series}" limit="1" disable="categories|member_data|pagination" }
 			<h3>Most recent story</h3>
 				  <div class="media">
 				  	  <a href="{if page_url != ''}{page_url}{if:else}{comment_url_title_auto_path}{/if}" class="pull-left" style="width: 15%;">
@@ -35,8 +35,7 @@
 
 				<ul id="recent-posts" class="media-list">
 
-	{exp:channel:entries sticky="no" channel="stories" dynamic="no" search:post_series="{embed:series}" limit="5" offset="1" disable="categories|member_data" paginate="bottom"}
-
+	{exp:channel:entries sticky="no" channel="stories" dynamic="no" search:post_series="{embed:series}" search:secondary_series="not {embed:series}" limit="5" offset="1" disable="categories|member_data" paginate="bottom"}
 
 					{rji_media_list}
 
@@ -53,27 +52,30 @@
 </ul>
 </div>
 
-	<div class="page-header"><h3>Related stories</h3></div>
 
-	<div class="card-bg">
-
-	<ul id="recent-posts" class="media-list">
-
-	{exp:channel:entries sticky="no" channel="stories" dynamic="no" search:secondary_series="{embed:series}" limit="5" offset="1" disable="categories|member_data" paginate="bottom"}
+<div class="page-header"><h3>Related stories</h3></div>
 
 
-			{rji_media_list}
+<div class="card-bg">
 
-			{if current_url == embed:page_url}
-				{paginate}
-					<ul class="pager">
-						<li class="next"><a href="{embed:comment_path}/P5#recent-posts">Older &rarr;</a></li>
-					</ul>
-				{/paginate}
-			{if:else}
-				{pagination_snippet}
-			{/if}
+<ul id="recent-posts" class="media-list">
 
-	{/exp:channel:entries}
+{exp:channel:entries sticky="no" dynamic="no" search:post_series="{embed:series}" search:secondary_series="{embed:series}" limit="5" disable="categories|member_data" paginate="bottom"}
+
+
+	{rji_media_list}
+
+	{if current_url == embed:page_url}
+		{paginate}
+			<ul class="pager">
+				<li class="next"><a href="{embed:comment_path}/P5#recent-posts">Older &rarr;</a></li>
 			</ul>
-			</div>
+		{/paginate}
+	{if:else}
+		{pagination_snippet}
+	{/if}
+
+{/exp:channel:entries}
+
+</ul>
+</div>
