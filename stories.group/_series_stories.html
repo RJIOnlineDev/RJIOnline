@@ -62,6 +62,9 @@
 
 {exp:channel:entries sticky="no" dynamic="no" search:post_series="{embed:series}" search:secondary_series="{embed:series}" limit="5" disable="categories|member_data" paginate="bottom"}
 
+	{if no_results}
+		<p>This series has no related stories.</p>
+	{/if}
 
 	{rji_media_list}
 
