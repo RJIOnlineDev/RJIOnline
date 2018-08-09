@@ -1,0 +1,118 @@
+{!--- Live Stream
+	The event live stream is now a template so that we can use the custome tracking software
+	*See template main/index for more template details; only details on this specific template will be documented --}
+
+{html_head}
+	<title>
+	RJI Live Stream
+	</title>
+	{head_content}
+
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "BreadcrumbList",
+	  "itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+			  "@id": "{site_url}",
+			  "name": "Home"
+			}
+		  },{
+			"@type": "ListItem",
+			"position": 2,
+			"item": {
+			  "@id": "{path='live_test/index'}",
+			  "name": "Live"
+			}
+		  }]
+	}
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $("#rosterModal").modal('show');
+    });
+	 </script>
+
+{html_head_end}
+<body>
+{embed="main/_navbar"}
+
+<ol class="breadcrumb">
+	<li><a href="{site_url}">Home</a></li>
+	<li class="active">Live</li>
+</ol>
+
+<div id="main-section" class="container">
+<div class="row">
+
+	<div class="col-md-8 col-sm-12">
+
+	<h1>Welcome to RJI live</h1>
+
+<iframe id="ls_embed_1505327623" src="https://livestream.com/accounts/22537174/events/7703465/player?width=960&height=540&enableInfoAndActivity=true&defaultDrawer=feed&autoPlay=true&mute=false" width="960" height="540" style="width: 100%;" frameborder="0" scrolling="no" allowfullscreen> </iframe><script type="text/javascript" data-embed_id="ls_embed_1505327623" src="https://livestream.com/assets/plugins/referrer_tracking.js"></script>
+
+<!--<iframe id="ls_embed_1504717892" src="https://livestream.com/accounts/22537174/events/7703465/player?width=960&height=540&enableInfoAndActivity=true&defaultDrawer=feed&autoPlay=true&mute=false" width="960" height="540" style="width: 100%;" frameborder="0" scrolling="no" allowfullscreen> </iframe><script type="text/javascript" data-embed_id="ls_embed_1504717892" src="https://livestream.com/assets/plugins/referrer_tracking.js"></script>-->
+
+<!--<iframe id="ls_embed_1504198942" src="https://livestream.com/accounts/22537174/events/7594649/player?width=960&height=540&enableInfoAndActivity=true&defaultDrawer=feed&autoPlay=true&mute=false" width="960" height="540" style="width: 100%;" frameborder="0" scrolling="no" allowfullscreen> </iframe><script type="text/javascript" data-embed_id="ls_embed_1504198942" src="https://livestream.com/assets/plugins/referrer_tracking.js"></script>-->
+
+<!--<iframe id="ls_embed_1504120971" src="https://livestream.com/accounts/22537174/events/7689357/player?width=960&height=540&enableInfoAndActivity=true&defaultDrawer=feed&autoPlay=true&mute=false" width="960" height="540" style="width: 100%;" frameborder="0" scrolling="no" allowfullscreen> </iframe><script type="text/javascript" data-embed_id="ls_embed_1504120971" src="https://livestream.com/assets/plugins/referrer_tracking.js"></script>-->
+
+<!--	<p>To help us know who's watching our live stream, please leave us your name and email address.</p>
+
+	{exp:freeform:form form_id="1" admin_notify="rji@rjionline.org" return="live/index03"}
+	<fieldset id="roster_fields">
+		  <div class="form-group row">
+			<div class="col-sm-6">
+				<label for="first_name" class="control-label">First name</label>
+				{freeform:field:first_name
+					attr:id="first_name"
+					attr:class="form-control"
+				}
+			</div>
+			<div class="col-sm-6">
+				<label for="last_name" class="control-label">Last name</label>
+				{freeform:field:last_name
+					attr:id="last_name"
+					attr:class="form-control"
+				}
+			</div>
+			<div class="form-group">
+				<div class="col-sm-12" style="padding-top: 1em;">
+					<label for="email" class="control-label">Email</label>
+					{freeform:field:email
+						attr:id="email"
+						attr:class="form-control"
+					}
+				</div>
+			</div>
+		</fieldset>
+		<input type="submit" name="submit" value="Submit" class="btn btn-success">
+-->
+		<!--{freeform:submit}-->
+		<!--<button type="submit" class="btn btn-success" data-dismiss="modal" aria-hidden="true">Submit</button>-->
+<!--		<button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+		{/exp:freeform:form}
+-->
+
+    </div>
+
+    <div id="sidebar" class="col-md-4 hidden-sm hidden-xs">
+    <!-- Insert Scribblelive code here -->
+    {!--<div class="scrbbl-embed" data-src="/event/2046731"></div>
+<script>(function(d, s, id) {var js,ijs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//embed.scribblelive.com/widgets/embed.js";ijs.parentNode.insertBefore(js, ijs);}(document, 'script', 'scrbbl-js'));</script>
+    <p>Click the word balloon icon above to comment directly in the comment box, or use the Twitter hashtag below.</p>
+    <h2><a href="https://twitter.com/hashtag/rjitech" target="_blank">#rjitech</a></h2>--}
+
+{embed="main/_sidebar" recent="YES" events="YES" related="NO" categories="YES" tags="YES" section="stories"}
+
+    </div>
+
+</div>
+</div>
+
+{page_end}

@@ -1,0 +1,97 @@
+<ul class="sharing-buttons">
+	<li>
+		<a
+			class="facebook"
+			href="https://www.facebook.com/sharer/sharer.php?u={exp:url_encode}{comment_url_title_auto_path}{/exp:url_encode}"
+			onClick="ga('send', {
+  						hitType: 'event',
+  						eventCategory: 'Social Media',
+  						eventAction: 'share',
+  						eventLabel: 'Facebook'
+				});"
+			target="_blank"
+		>
+			<span class="fa-stack fa-lgs">
+				<i class="fa fa-stack-2x fa-circle"></i>
+				<i class="fa fa-stack-1x fa-facebook fa-inverse"></i>
+			</span>
+			<span class="sr-only">Share on Facebook</span>
+		</a>
+	</li>
+	<li>
+		<a
+			class="twitter"
+			href="https://twitter.com/intent/tweet?url={exp:url_encode}{comment_url_title_auto_path}{/exp:url_encode}&text={exp:url_encode}Interesting read at RJIOnline{/exp:url_encode}&via=RJI"
+			target="_blank"
+			onClick="ga('send', {
+  						hitType: 'event',
+  						eventCategory: 'Social Media',
+  						eventAction: 'share',
+  						eventLabel: 'Twitter'
+				});"
+		>
+			<span class="fa-stack fa-lgs">
+				<i class="fa fa-stack-2x fa-circle"></i>
+				<i class="fa fa-stack-1x fa-twitter fa-inverse"></i>
+			</span>
+			<span class="sr-only">Tweet it</span>
+		</a>
+	</li>
+	<li>
+		<a
+			class="linkedin"
+			href="http://www.linkedin.com/shareArticle?mini=true&url={exp:url_encode}{comment_url_title_auto_path}{/exp:url_encode}"
+			target="_blank"
+			onClick="ga('send', {
+  						hitType: 'event',
+  						eventCategory: 'Social Media',
+  						eventAction: 'share',
+  						eventLabel: 'LinkedIn'
+				});"
+		>
+			<span class="fa-stack fa-lgs">
+				<i class="fa fa-stack-2x fa-circle"></i>
+				<i class="fa fa-stack-1x fa-linkedin fa-inverse"></i>
+			</span>
+			<span class="sr-only">Share on LinkedIn</span>
+		</a>
+	</li>
+	<li>
+		<a
+			class="google-plus"
+			href="https://plus.google.com/share?url={exp:url_encode}{comment_url_title_auto_path}{/exp:url_encode}"
+			target="_blank"
+			onClick="ga('send', {
+  						hitType: 'event',
+  						eventCategory: 'Social Media',
+  						eventAction: 'share',
+  						eventLabel: 'Google+'
+				});"
+		>
+			<span class="fa-stack fa-lgs">
+				<i class="fa fa-stack-2x fa-circle"></i>
+				<i class="fa fa-stack-1x fa-google-plus fa-inverse"></i>
+			</span>
+			<span class="sr-only">Share on Google+</span>
+		</a>
+	</li>
+	<li>
+		<a
+			class="email"
+			href="mailto:?subject={exp:url_encode}Interesting read from RJI{/exp:url_encode}&body={exp:url_encode}{comment_url_title_auto_path}{/exp:url_encode}"
+			target="_blank"
+			onClick="ga('send', {
+  						hitType: 'event',
+  						eventCategory: 'Social Media',
+  						eventAction: 'share',
+  						eventLabel: 'Email'
+				});"
+		>
+		  	<span class="fa-stack fa-lgs">
+				<i class="fa fa-stack-2x fa-circle"></i>
+				<i class="fa fa-stack-1x fa-envelope fa-inverse"></i>
+			</span>
+			<span class="sr-only">Email it</span>
+		</a>
+	</li>
+</ul>

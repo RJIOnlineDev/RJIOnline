@@ -1,0 +1,132 @@
+{!--- account/roster
+	Requests viewers name and email address before viewing a live stream, but doesn't require a login.
+	*See template main/index for more template details; only details on this specific template will be documented --}
+
+{html_head}
+	<title>
+	Roster | RJI
+	</title>
+	{head_content}
+{html_head_end}
+<body>
+{embed="main/_navbar"}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "{site_url}roster",
+      "name": "Name and email"
+    }
+  }]
+}
+</script>
+<ol class="breadcrumb">
+	<li><a href="{site_url}">Home</a></li>
+    <li><a href="{path='account/index'}">Account</a></li>
+	<li class="active">Name and email address</li>
+</ol>
+<div id="main-section" class="container">
+<div class="row">
+
+	<div class="col-xs-12">
+
+    	<div class="page-header"><h2>Name and email address</h2></div>
+
+		{exp:freeform:form form_id="1"}
+		<fieldset id="roster_fields">
+			  <div class="form-group row">
+				<div class="col-sm-6">
+					<label for="first_name" class="control-label">First name</label>
+					{freeform:field:first_name
+						attr:id="first_name"
+						attr:class="form-control"
+					}
+				</div>
+				<div class="col-sm-6">
+					<label for="last_name" class="control-label">Last name</label>
+					{freeform:field:last_name
+						attr:id="last_name"
+						attr:class="form-control"
+					}
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12" style="padding-top: 1em;">
+						<label for="email" class="control-label">Email</label>
+						{freeform:field:email
+							attr:id="email"
+							attr:class="form-control"
+						}
+					</div>
+				</div>
+			</fieldset>
+			{/exp:freeform:form}
+
+			{exp:freemember:register
+				return="account/registered"
+				error_handling="inline"
+				require="first_name|last_name|email"
+                rules:first_name="alpha"
+                rules:last_name="alpha"
+				error_delimiters="<span class='has-error register-error'><p class='help-block'>|</p></span>"
+			}
+            	<fieldset id="register_fields">
+                    <div class="form-group row">
+                    	<div class="col-sm-6">
+                        <label for="first_name" class="control-label">First Name</label>
+                        <div><input pattern="[A-Za-z]{1,}" title="Alpha characters only" class="form-control" type="text" id="first_name" name="first_name" value="{first_name}" required></div>
+                        {error:first_name}
+                        </div>
+                        <div class="col-sm-6">
+                        <label for="last_name" class="control-label">Last Name</label>
+                        <div><input  pattern="[A-Za-z]{1,}" title="Alpha characters only" class="form-control" type="text" id="last_name" name="last_name" value="{last_name}" required></div>
+                        {error:last_name}
+                    	</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="control-label">Email</label>
+                        <div><input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" type="email" title="Please input in the format: user@example.com" class="form-control" type="email" id="email" name="email" value="{email}" required>{error:email}</div>
+
+                    </div>
+
+						  <div class="form-group">
+                        <label for="password" class="control-label">Password</label>
+                        <div><input pattern="{5,}" class="form-control" type="password" id="password" name="password" value="{password}">{error:password}</div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password_confirm" class="control-label">Confirm Password</label>
+                        <div><input pattern="{5,}" class="form-control" type="password" id="password_confirm" name="password_confirm" value="{password_confirm}">{error:password_confirm}</div>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                        	<input type="checkbox" name="accept_terms"/> I agree to the <a href="{site_url}privacy-policy" target="_blank">Privacy Policy</a> and <a href="{site_url}terms-service" target="_blank">Terms of Service</a>
+                        </label>
+                        {error:accept_terms}
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-3">
+                          	<input class="btn btn-success btn-block" type="submit" name="submit" value="View the live stream" id="submit_comment">
+                          </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+            {/exp:freemember:register}
+
+    		{exp:stash:set scope="user" name="success" save="yes"}
+                Thank you for joining us at RJI. An activation link has been sent to your email. Follow the link to complete your account setup.
+            {/exp:stash:set}
+    </div>
+
+</div>
+</div>
+
+{page_end}
